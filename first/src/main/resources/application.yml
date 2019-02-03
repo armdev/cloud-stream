@@ -1,0 +1,24 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+spring:  
+  application:
+    name: first
+  rabbitmq:
+    host: localhost
+    port: 5672
+  cloud:  
+    stream:
+      bindings:
+        output:
+          destination: data-out
+          producer:
+            partitionKeyExpression: payload.id
+            partitionCount: 4
+
+
+server:  
+  port: ${PORT:8090}

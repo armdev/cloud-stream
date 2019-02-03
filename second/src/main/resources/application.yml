@@ -1,0 +1,25 @@
+spring:  
+  application:
+    name: second
+  rabbitmq:
+    host: localhost
+    port: 5672
+  cloud:  
+    stream:
+      bindings:
+        input:
+          destination: data-out
+        output:
+          destination: data-next
+          producer:
+            partitionKeyExpression: payload.id
+            partitionCount: 4
+       
+      rabbit:
+        bindings:          
+          input:
+            consumer:
+              exchangeType: direct
+
+server:  
+  port: ${PORT:8091}
