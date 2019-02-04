@@ -9,10 +9,10 @@ import org.springframework.cloud.stream.messaging.Processor;
 
 @SpringBootApplication
 @EnableBinding(Processor.class)
-public class FirstApplication {
+public class SecondApplication {
 
     public static void main(String[] args) {
-        final SpringApplication application = new SpringApplication(FirstApplication.class);
+        final SpringApplication application = new SpringApplication(SecondApplication.class);
         application.setBannerMode(Banner.Mode.OFF);
         application.setWebApplicationType(WebApplicationType.REACTIVE);
         application.run(args);

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author armena
  */
 @RestController
-@RequestMapping("/api/v3/data")
-@Api("/api/v3/data")
+@RequestMapping("/api/v2/data")
+@Api("/api/v2/data")
 public class MainResource {
     
     @Autowired
