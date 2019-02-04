@@ -1,4 +1,4 @@
-package io.project.first.first;
+package io.project.app;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

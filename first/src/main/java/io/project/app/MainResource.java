@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package io.project.first.first;
+package io.project.app;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,13 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @author armena
  */
 @RestController
-@RequestMapping("/api/v2/data")
+@RequestMapping("/api/v3/data")
+@Api("/api/v3/data")
 public class MainResource {
     
     @Autowired
     private DataSender dataSender;
     
-    @GetMapping
+    @GetMapping("/send")
+    @CrossOrigin
     public String sendDate(){
         dataSender.send(new DataModel(System.currentTimeMillis(), "user data"));
         return "done";

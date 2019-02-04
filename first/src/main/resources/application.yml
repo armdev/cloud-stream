@@ -1,8 +1,21 @@
 management:
+  security:  
+   enabled: false      
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
   endpoints:
-    web:
+    jmx:
       exposure:
-        include: "*"
+       include: '*'
+    web:
+     exposure:
+      include: '*'
+      base-path: /actuator
+    cors:
+      allowed-origins: 'true'
+      enabled-by-default: 'false'
         
 spring:  
   application:
