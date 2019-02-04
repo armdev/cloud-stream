@@ -22,7 +22,7 @@ public class MainResource {
     @GetMapping("/send")
     @CrossOrigin
     public String sendDate(){
-        dataSender.send(new DataModel(System.currentTimeMillis(), "user data"));
+        dataSender.send(new DataModel());
         return "done";
     }
 }

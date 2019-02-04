@@ -5,14 +5,22 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
+    listener:
+       direct:
+         retry:
+          enabled: true
+          initial-interval: 3
   cloud:  
     stream:
-      bindings:
+      binding-retry-interval: 5
+      bindings:       
         output:
           destination: data-out
           producer:
             partitionKeyExpression: payload.id
             partitionCount: 4
+            
+   
 
 
 server:  

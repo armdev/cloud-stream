@@ -14,7 +14,7 @@ public class SecondApplication {
     public static void main(String[] args) {
         final SpringApplication application = new SpringApplication(SecondApplication.class);
         application.setBannerMode(Banner.Mode.OFF);
-        application.setWebApplicationType(WebApplicationType.REACTIVE);
+        application.setWebApplicationType(WebApplicationType.SERVLET);
         application.run(args);
     }
 
