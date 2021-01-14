@@ -1,6 +1,5 @@
 package io.project.second;
 
-import com.rabbitmq.client.Channel;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.support.AmqpHeaders;
